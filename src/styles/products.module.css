@@ -1,0 +1,11 @@
+.toolbar{ 
+  margin-bottom: 5%;
+}
+.content {
+  flex-grow: 1;
+  background-color: rgb(211, 211, 211)
+  /* padding: theme.spacing(3); */
+}
+.root {
+  flex-grow: 1;
+}

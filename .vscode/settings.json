@@ -1,0 +1,4 @@
+{
+  "prettier.arrowParens": "avoid",
+  "workbench.sideBar.location": "right"
+}
