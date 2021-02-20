@@ -2,13 +2,13 @@
   height: 260px;
 }
 .cardContent {
-  display: "flex";
-  justify-content: "space-between";
+  display: flex;
+  justify-content: space-between;
 }
 .cartActions {
-  justify-content: "space-between";
+  justify-content: space-between;
 }
 .buttons {
-  display: "flex";
-  align-items: "center";
+  display: flex;
+  align-items: center;
 }

@@ -9,14 +9,12 @@ import {
 import { AddShoppingCart } from "@material-ui/icons";
 import React from "react";
 import styles from "../styles/product.module.css";
-// import img from "../assets/store.svg";
 const Product = ({ product, onAddToCart }: any) => {
   return (
     <Card className={styles.root}>
       <CardMedia
         className={styles.media}
         title={product.name}
-        // image={img}
         image={product.media.source}
       />
       <CardContent>

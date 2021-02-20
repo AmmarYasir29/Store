@@ -4,8 +4,6 @@ import {
   Typography,
   Badge,
   Toolbar,
-  MenuItem,
-  Menu,
   IconButton,
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";

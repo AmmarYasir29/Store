@@ -3,6 +3,7 @@ import { Products, Nav, Cart } from "./components";
 import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { commerce } from "./lib/commirce";
+// import SignUp from "./components/SignUp";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -36,7 +37,8 @@ function App() {
   }, []);
   return (
     <Router>
-      <div>
+      <div style={{ display: 'flex' }}>
+        <CssBaseline />
         <Nav count={cart.total_items} />
         <Switch>
           <Route exact path="/">
@@ -51,25 +53,9 @@ function App() {
             />
           </Route>
         </Switch>
+        {/* <SignUp/> */}
       </div>
     </Router>
-    // <Router>
-    // <div style={{ display: 'flex' }}>
-    //   <CssBaseline />
-    //   <Nav totalItems={cart.total_items} />
-    //   <Switch>
-    //     <Route exact path="/">
-    //       <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
-    //     </Route>
-    //     <Route exact path="/cart">
-    //       <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
-    //     </Route>
-    /* <Route path="/checkout" exact>
-          <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
-        </Route> */
-    //     </Switch>
-    //   </div>
-    // </Router>
   );
 }
 

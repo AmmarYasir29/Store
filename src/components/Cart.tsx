@@ -1,20 +1,19 @@
 import React from "react";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
-// import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import styles from "../styles/cart.module.css";
-import { Link } from "react-router-dom";
+
 const Cart = ({
   cart,
   onUpdateCartQty,
   onRemoveFromCart,
   onEmptyCart,
 }: any) => {
-  const handleEmptyCart = () => onEmptyCart();
+  if (!cart.line_items) return <div>"Loading..."</div>;
 
   const renderEmptyCart = () => (
-    <Typography variant="subtitle1">
+    <Typography variant="h5">
       You have no items in your shopping cart,
       <Link className={styles.link} to="/">
         start adding some
@@ -22,8 +21,6 @@ const Cart = ({
       !
     </Typography>
   );
-
-  if (!cart.line_items) return <div>"Loading"</div>;
 
   const renderCart = () => (
     <>
@@ -39,7 +36,7 @@ const Cart = ({
         ))}
       </Grid>
       <div className={styles.cardDetails}>
-        <Typography variant="h4">
+        <Typography variant="h4" gutterBottom>
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
         <div>
@@ -49,25 +46,32 @@ const Cart = ({
             type="button"
             variant="contained"
             color="secondary"
-            onClick={handleEmptyCart}
+            onClick={() => onEmptyCart()}
+            style={{ marginRight: "20px" }}
           >
             Empty cart
           </Button>
           <Button
             className={styles.checkoutButton}
-            // component={Link}
-            // to="/checkout"
             size="large"
             type="button"
             variant="contained"
             color="primary"
           >
-            Checkout
+            <a
+              className={styles.contaxt}
+              href="http://m.me/Hawraa.Gallery"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Checkout
+            </a>
           </Button>
         </div>
       </div>
     </>
   );
+
   return (
     <Container>
       <div className={styles.toolbar} />
